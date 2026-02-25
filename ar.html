@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <title>AR с кастомным маркером</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="style4.css">
+
+    <!-- A-Frame -->
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+
+    <!-- MindAR -->
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar/dist/mindar-image-aframe.prod.js"></script>
+</head>
+
+<body>
+
+    <a-scene mindar-image="imageTargetSrc: ./targets.mind;" color-space="sRGB" renderer="colorManagement: true;
+              physicallyCorrectLights: true;
+              toneMapping: ACESFilmicToneMapping;
+              exposure: 1.0;" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: true">
+
+        <!-- Камера -->
+        <a-camera position="0 0 0" look-controls="enabled: false">
+        </a-camera>
+
+        <!-- AR-маркер -->
+        <a-entity mindar-image-target="targetIndex: 0">
+
+            <!-- 3D модель -->
+            <a-gltf-model src="./ar.glb" position="0 0 0" rotation="0 0 0" scale="0.5 0.5 0.5">
+            </a-gltf-model>
+
+        </a-entity>
+
+    </a-scene>
+
+    <div class="hint">
+        Point your camera at the image.
+        More details at
+        <a href="index.html" target="_blank">our website</a>
+    </div>
+
+</body>
+
+</html>

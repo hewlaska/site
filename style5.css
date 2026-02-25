@@ -1,0 +1,10 @@
+.image {
+  background-image: url("images/m4.png");
+  width: 100%;
+  aspect-ratio: 1500 / 267;  /* или aspect-ratio: 5.62; */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 20px 0;
+}
+
